@@ -1,3 +1,5 @@
+
+````markdown
 # 🎵 music_auto_copy
 
 一个基于 **Python** 的小工具，可以将音乐文件按照 **标签信息（歌手 / 专辑）** 分类整理到目标目录。  
@@ -19,44 +21,54 @@
 
 ```bash
 pip install mutagen
+````
 
-⚙️ 使用方法
+---
 
-使用你喜欢的编辑器打开 music_auto_copy.py
+## ⚙️ 使用方法
 
-修改脚本开头的 配置区域：
+1. 使用你喜欢的编辑器打开 `music_auto_copy.py`
+2. 修改脚本开头的 **配置区域**：
 
-source_dir = Path(r'C:\Users\admin\Desktop\source')   # 源文件目录
-target_dir = Path(r'D:\music')                        # 输出目录
+   ```python
+   source_dir = Path(r'C:\Users\admin\Desktop\source')   # 源文件目录
+   target_dir = Path(r'D:\music')                        # 输出目录
+   ```
+3. 保存后运行脚本：
 
+   ```bash
+   python music_auto_copy.py
+   ```
+4. 脚本会：
 
-保存后运行脚本：
+   * 扫描源目录下所有音频文件
+   * 根据标签整理并移动到目标目录
+   * 删除空文件夹
+   * 在当前目录生成 `music_organize.log` 日志
 
-python music_auto_copy.py
+---
 
+## 📖 示例输出
 
-脚本会：
-
-扫描源目录下所有音频文件
-
-根据标签整理并移动到目标目录
-
-删除空文件夹
-
-在当前目录生成 music_organize.log 日志
-
-📖 示例输出
+```bash
 🎵 开始整理音乐……
 🎧 发现 128 个音频候选文件，正在处理中……
 ✅ song1.mp3 → Artist1/AlbumA
 ✅ song2.flac → Artist2/AlbumB
 🧹 删除空目录：C:\Users\admin\Desktop\source\old
 ✅ 整理完成！日志保存在 music_organize.log
+```
 
-📝 注意事项
+---
 
-源目录不存在时脚本会直接退出
+## 📝 注意事项
 
-如果音频缺少标签（歌手或专辑），文件会被跳过并记录在日志中
+* 源目录不存在时脚本会直接退出
+* 如果音频缺少标签（歌手或专辑），文件会被跳过并记录在日志中
+* 目标目录中已存在同名文件时，会跳过该文件
 
-目标目录中已存在同名文件时，会跳过该文件
+---
+
+
+要不要我再帮你加一个 **效果图/目录结构示例图**（比如运行前后目录对比），这样更直观？
+```
